@@ -1,0 +1,19 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ .Chart.Name }}-ingress
+  namespace: 
+
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`{{ .Values.hosts.host }}`)
+      services:
+        - name: {{ .Chart.Name }}-{{ .Values.env }}-svc
+          port: {{ .Values.service.externalPort }}
+  tls:
+    secretName: argo
+    domains:
+      - main: {{ .Values.ingress.hosts.host }}

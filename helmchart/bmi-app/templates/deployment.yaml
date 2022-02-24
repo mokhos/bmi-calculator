@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: bmi-app
+    env: {{ .Values.env }}
+  name: bmi-app-{{ .Values.env }}
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: bmi-app
+      env: {{ .Values.env }}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: bmi-app
+        env: {{ .Values.env }}
+    spec:
+      containers:
+      - image: mohammadkhoshnazar/node-hello-app
+        name: node-hello-app
+        ports:
+        - containerPort: 3000
+        resources: {}
+status: {}
