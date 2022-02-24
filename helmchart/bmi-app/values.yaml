@@ -7,7 +7,7 @@ env: development
 replicaCount: 1
 
 image:
-  repository: https://hub.docker.com/repository/docker/mohammadkhoshnazar/bmi-calc
+  repository: mohammadkhoshnazar/bmi-calc
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
