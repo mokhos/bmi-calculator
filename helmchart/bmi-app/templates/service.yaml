@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Chart.Name }}-{{ .Values.env }}-svc
+  name: "{{ .Chart.Name }}-{{ .Values.env }}-svc"
   labels:
     chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
     env: {{ .Values.env }}

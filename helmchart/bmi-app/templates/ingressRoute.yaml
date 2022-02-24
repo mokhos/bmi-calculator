@@ -1,19 +1,22 @@
+{{- if .Values.ingress.enabled }}
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: {{ .Chart.Name }}-ingress
   namespace: 
-
+  annotations:
+    "kubernetes.io/ingress.class": "{{ .Values.ingress.className }}"
 spec:
   entryPoints:
     - websecure
   routes:
     - kind: Rule
-      match: Host(`{{ .Values.hosts.host }}`)
+      match: Host(`{{ .Values.env }}-{{ .Values.ingress.hosts.host }}`)
       services:
-        - name: {{ .Chart.Name }}-{{ .Values.env }}-svc
+        - name: "{{ .Chart.Name }}-{{ .Values.env }}-svc"
           port: {{ .Values.service.externalPort }}
   tls:
     secretName: argo
     domains:
       - main: {{ .Values.ingress.hosts.host }}
+{{- end }}
