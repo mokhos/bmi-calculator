@@ -20,8 +20,8 @@ spec:
         env: {{ .Values.env }}
     spec:
       containers:
-      - image: mohammadkhoshnazar/node-hello-app
-        name: node-hello-app
+      - image: {{ .Values.image }}
+        name: {{ .Chart.Name }}
         ports:
         - containerPort: 3000
         resources: {}
