@@ -84,8 +84,8 @@ label {
 }
 
 .delete-btn {
-  /* background-color: #e74c3c; */
-  background-color: #3ce792;
+  background-color: #e74c3c;
+  /* background-color: #3ce792; */
   color: white;
   border: none;
   border-radius: 50%;
@@ -98,6 +98,6 @@ label {
 }
 
 .delete-btn:focus {
-  /* background-color: #e74c3c; */
-  background-color: #3ce792;
+  background-color: #e74c3c;
+  /* background-color: #3ce792; */
 }
