@@ -1,0 +1,8 @@
+helm:
+  parameters:
+  - name: image.name
+    value: mohammadkhoshnazar/bmi-calc
+    forcestring: true
+  - name: image.tag
+    value: v3
+    forcestring: true
