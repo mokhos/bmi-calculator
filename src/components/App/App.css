@@ -84,7 +84,8 @@ label {
 }
 
 .delete-btn {
-  background-color: #e74c3c;
+  /* background-color: #e74c3c; */
+  background-color: #3ce792;
   color: white;
   border: none;
   border-radius: 50%;
