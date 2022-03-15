@@ -4,5 +4,5 @@ helm:
     value: mohammadkhoshnazar/bmi-calc
     forcestring: true
   - name: image.tag
-    value: v3
+    value: v4
     forcestring: true
