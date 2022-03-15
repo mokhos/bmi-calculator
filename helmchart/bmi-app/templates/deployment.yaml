@@ -26,3 +26,12 @@ spec:
         - containerPort: 3000
         resources: {}
 status: {}
+
+
+
+
+####### Annotations for ArgoCD image updater
+# argocd-image-updater.argoproj.io/bmi.update-strategy=latest 
+# argocd-image-updater.argoproj.io/git-branch=master 
+# argocd-image-updater.argoproj.io/image-list=bmi=mohammadkhoshnazar/bmi-calc 
+# argocd-image-updater.argoproj.io/write-back-method=git:secret:argo/git-creds
