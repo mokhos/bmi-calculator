@@ -1,8 +1,11 @@
 helm:
   parameters:
+  - name: ingress.hosts.host
+    value: app.80.158.3.105.sslip.io
+    forcestring: false
   - name: image.name
     value: mohammadkhoshnazar/bmi-calc
     forcestring: true
   - name: image.tag
-    value: v4
+    value: v5
     forcestring: true
