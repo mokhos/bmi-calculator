@@ -50,7 +50,7 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    host: app.80.158.3.105.sslip.io 
+    host: testapp.rytle-it.de
     secretName: ''
   tls: []
   #  - secretName: chart-example-tls
