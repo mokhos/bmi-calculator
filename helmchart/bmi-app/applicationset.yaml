@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: bmi-calculator
+spec:
+  generators:
+  - clusters: {} # Automatically use all clusters defined within Argo CD
+  template:
+    metadata:
+      name: '{{name}}-bmi-calculator' # 'name' field of the Secret
+    spec:
+      source:
+        repoURL: https://github.com/mokhos/bmi-calculator.git
+        targetRevision: HEAD
+        path: helmchart
+      destination:
+        server: '{{server}}' # 'server' field of the secret
+        namespace: bmi
